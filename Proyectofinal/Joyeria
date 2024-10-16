@@ -1,0 +1,144 @@
+import os
+
+# Lista de productos e inventario disponible
+productos = [
+    {"nombre": "Anillo de diamante", "precio": 10000, "cantidad": 5},
+    {"nombre": "Anillo de Cuarzo", "precio": 400, "cantidad": 8},
+    {"nombre": "Anillo de Plata", "precio": 1000, "cantidad": 12},
+    {"nombre": "Anillo de Oro", "precio": 6000, "cantidad": 5},
+    {"nombre": "Collar de Esmeralda", "precio": 8000, "cantidad": 3},
+    {"nombre": "Collar de Perlas", "precio": 1200, "cantidad": 10},
+    {"nombre": "Pulsera de Oro", "precio": 2500, "cantidad": 7},
+    {"nombre": "Pulsera de Plata", "precio": 900, "cantidad": 15},
+    {"nombre": "Reloj Rolex", "precio": 20000, "cantidad": 2},
+    {"nombre": "Reloj Cartier", "precio": 15000, "cantidad": 3},
+    {"nombre": "Reloj Seiko", "precio": 3000, "cantidad": 5},
+    {"nombre": "Reloj Casio", "precio": 150, "cantidad": 20},
+    {"nombre": "Aros de Diamante", "precio": 5000, "cantidad": 4},
+    {"nombre": "Aros de Plata", "precio": 600, "cantidad": 10},
+    {"nombre": "Aros de Oro", "precio": 3500, "cantidad": 6},
+    {"nombre": "Broche de Zafiro", "precio": 7000, "cantidad": 3},
+    {"nombre": "Broche de Rubí", "precio": 6500, "cantidad": 2},
+    {"nombre": "Tobillera de Plata", "precio": 850, "cantidad": 9},
+    {"nombre": "Tobillera de Oro", "precio": 4000, "cantidad": 5}
+]
+
+# Carrito de compras inicializado vacío
+carrito = []
+
+# Función para limpiar la pantalla (compatible con Windows, Linux, y Mac)
+def limpiarPantalla():
+    if os.name == 'nt':
+        os.system("cls")  # Comando para Windows
+    else:
+        os.system("clear")  # Comando para Linux o Mac
+
+# Función para mostrar la lista de productos disponibles
+def mostrar_productos():
+    limpiarPantalla()
+    print("------------- LISTA DE PRODUCTOS DISPONIBLES -------------")
+    for i, producto in enumerate(productos):
+        print(f"{i + 1}. {producto['nombre']} - Precio: ${producto['precio']} - Stock disponible: {producto['cantidad']}")
+
+# Función para agregar productos al carrito
+def agregar_al_carrito():
+    limpiarPantalla()
+    mostrar_productos()
+    try:
+        # Solicitar al usuario que seleccione un producto
+        opcion = int(input("Seleccione el número del producto que desea agregar: "))
+        
+        # Verifica si la opción es válida
+        if 1 <= opcion <= len(productos):
+            cantidad = int(input("Ingrese la cantidad deseada: "))
+            producto = productos[opcion - 1]
+            
+            # Verifica si hay suficiente stock del producto
+            if cantidad > producto["cantidad"]:
+                print("Lo sentimos, no hay suficiente stock de este producto.")
+            else:
+                # Actualiza el stock y añade el producto al carrito
+                productos[opcion - 1]['cantidad'] -= cantidad
+                carrito.append({"nombre": producto["nombre"], "precio": producto['precio'], "cantidad": cantidad})
+                print(f"¡Producto agregado! Has añadido {cantidad} {producto['nombre']} al carrito.")
+        else:
+            print("Opción inválida. Por favor, selecciona un número válido.")
+    
+    # Manejo de excepciones en caso de errores
+    except Exception as e:
+        print("Se ha producido un error:", e)
+
+# Función para mostrar los productos en el carrito
+def mostrarCarrito():
+    limpiarPantalla()
+    if carrito:
+        print("------------- TU CARRITO DE COMPRAS -------------")
+        for i, item in enumerate(carrito, 1):
+            print(f"{i}. Producto: {item['nombre']} - Precio unitario: ${item['precio']} - Cantidad: {item['cantidad']}")
+    else:
+        print("El carrito está vacío. Agrega productos para continuar.")
+
+# Función para calcular el total de la compra
+def calcularTotal():
+    total = sum(item["precio"] * item["cantidad"] for item in carrito)
+    print(f"El total a pagar es: ${total}")
+
+# Función para finalizar la compra
+def finalizarCompra():
+    limpiarPantalla()
+    mostrarCarrito()
+
+    if carrito:
+        calcularTotal()
+        confirmar = input("¿Desea proceder con la compra? (s/n): ").lower()
+
+        if confirmar == "s":
+            carrito.clear()  # Vacía el carrito después de finalizar la compra
+            print("¡Compra realizada con éxito! Gracias por tu compra.")
+        else:
+            print("Compra cancelada. Los productos permanecen en tu carrito.")
+    else:
+        print("El carrito está vacío. No hay productos para comprar.")
+
+# Función principal que controla el menú de la aplicación
+def main():
+    while True:
+        limpiarPantalla()
+        print("------------- MENÚ PRINCIPAL DE LA JOYERÍA Y RELOJERÍA -------------")
+        print("1. Ver productos disponibles")
+        print("2. Agregar productos al carrito")
+        print("3. Ver carrito de compras")
+        print("4. Finalizar compra")
+        print("5. Salir")
+
+        try:
+            # Mapeo de las opciones del menú a las funciones correspondientes
+            opciones = {
+                1: mostrar_productos,
+                2: agregar_al_carrito,
+                3: mostrarCarrito,
+                4: finalizarCompra
+            }
+
+            # Solicita la opción seleccionada por el usuario
+            seleccion = int(input("Por favor, selecciona una opción: "))
+            
+            # Ejecuta la función correspondiente según la selección del usuario
+            if seleccion in opciones:
+                opciones[seleccion]()
+                input("Presione Enter para continuar...")
+            elif seleccion == 5:
+                print("Gracias por visitar nuestra joyería y relojería. ¡Hasta pronto!")
+                break
+
+        # Manejo de excepciones para entradas inválidas
+        except ValueError:
+            print("Entrada inválida. Por favor, ingresa un número correspondiente a las opciones.")
+            input("Presione Enter para continuar...")
+
+        except Exception as e:
+            print(f"Se ha producido un error: {e}")
+            input("Presione Enter para continuar...")
+
+# Ejecutar el programa principal
+main()
