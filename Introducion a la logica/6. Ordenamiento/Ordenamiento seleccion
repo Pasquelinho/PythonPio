@@ -1,0 +1,26 @@
+def selection_sort(lista):
+    n = len(lista)
+    for i in range(n):
+        min_idx = i
+        for j in range(i+1, n):
+            if lista[j] < lista[min_idx]:
+                min_idx = j
+        # Intercambiar el valor mínimo encontrado con el primer valor de la sublista
+        lista[i], lista[min_idx] = lista[min_idx], lista[i]
+    return lista
+
+# Solicitar al usuario que ingrese 4 números separados por espacios
+numeros = input("Digite 4 números separados por espacios: ")
+
+try:
+    # Convertir la cadena de entrada en una lista de enteros
+    numeros_lista = [int(num) for num in numeros.split()]
+
+    # Verificar si el usuario ingresó exactamente 4 números
+    if len(numeros_lista) == 4:
+        # Ordenar la lista usando selection sort
+        print("Lista ordenada:", selection_sort(numeros_lista))
+    else:
+        print("Por favor, ingrese exactamente 4 números.")
+except ValueError:
+    print("Entrada inválida. Asegúrese de ingresar solo números enteros separados por espacios.")
