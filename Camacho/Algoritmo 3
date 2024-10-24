@@ -1,0 +1,35 @@
+# Generar un algoritmo que registre varios estudiantes bajo la clave publica, el estudiante por teclado debe ingresar direccion de residencia, nacionalidad, facultad, semestre, la nota 1 al 30%, la nota 2 al 30% y la nota 3 al 40%. El algoritmo debe mostrar la informacion asi como la suma de estos porcentajes.
+
+clave = "publica"
+while clave == "publica":
+
+ print("Bienvenido al sistema de registro de estudiantes.")
+
+ # ingreso de estudiantes
+
+ estudiante1 = input ("Ingrese su nombre: ")
+ direccion = input("Ingrese su dirección de residencia: ")
+ nacionalidad = input("Ingrese su nacionalidad: ")
+ facultad = input("Ingrese su facultad: ")
+ semestre = int(input("Ingrese su semestre: "))
+
+ # ingreso de notas
+
+ nota1 = float(input("Ingrese la Nota 1 (30%): "))
+ nota2 = float(input("Ingrese la Nota 2 (30%): "))
+ nota3 = float(input("Ingrese la Nota 3 (40%): "))
+
+ # Calcular el promedio
+
+ promedio = (nota1 * 0.30) + (nota2 * 0.30) + (nota3 * 0.40)
+
+ # Mostrar los datos
+ print ("La direccion del estudiante es: " , direccion)
+ print ("La nacionalidad del estudiante es: " , nacionalidad)
+ print ("La facultad del estudiante es: " , facultad)
+ print ("El semestre que cursa el estudiante es: " , semestre)
+ print ("El promedio de el estudiante es:", promedio)
+
+ clave = input("Si desea agregar otro estudiante, escriba 'publica'. En caso contrario, presione otra tecla para salir: ")
+
+ print("Registro finalizado.")

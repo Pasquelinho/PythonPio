@@ -18,12 +18,12 @@ print(numero3)
 
 #variables cadena Caracteres()
 nombre1 = "Hola"
-nombre2 = "Santiago"
+nombre2 = "Alan"
 
 nombre_completo = nombre1 + nombre2
 
 print(type(nombre_completo))
 print(nombre_completo)
 
-contrasenia_del_servidor = "jelou" #snake
-contrasenia_sc = "jelou" #contraseña del servidor de contabilidad
+contrasenia_del_servidor = "Hello" #snake
+contrasenia_sc = "Hello" #contraseña del servidor de contabilidad

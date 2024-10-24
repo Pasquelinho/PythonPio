@@ -1,0 +1,22 @@
+clave = "colpatria" # variable tipo texto
+while clave == "colpatria" : # while codigo repetitivo
+  nombre = input("Ingrese su nombre: ")
+  salario = int(input ("Ingrese su salario actual sin puntos: "))
+  personas = int(input("Operario ingrese el numero de personas a cargo: "))
+  profesion = input("Cual es su profesion? ")
+  retencion = (salario * 19 / 100)
+  salud = (salario * 16 / 100)
+  Ica = (salario * 5 / 100)
+  salariototal= (salario * 400 / 100)
+  
+  print ("El nombre del operario es: " , nombre)
+  print ("Su salario es: " , salario)
+  print ("El numero de personas a cargo es: " , personas)
+  print ("Su profesion es: " , profesion)
+  print ("La retencion es: " , retencion)
+  print ("Los costos de salud son: " , salud)
+  print ("Los costos de el ICA es: " , Ica)
+  print ("Entonces su sueldo a recibir es: " , salariototal)
+
+ 
+  clave = input ("Usuario si desea continuar escriba colpatria, en caso contrario presione otra tecla! ")

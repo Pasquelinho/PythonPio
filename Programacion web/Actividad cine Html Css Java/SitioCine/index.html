@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cine Pio - Cartelera</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Asegúrate de que la ruta del archivo JavaScript sea correcta -->
+    <script src="./scripts.js" defer></script>
+</head>
+
+<body>
+    <!-- ENCABEZADO -->
+    <header>
+        <img src="logoPio.png" class="pioLogo" alt="Logo de Cine Pio">
+        <h1>Cine Pio</h1>
+    </header>
+
+    <!-- SECCION DE CARTELERA -->
+    <section id="peliculas">
+
+        <!-- PELICULA 1 -->
+        <div class="pelicula">
+            <h3>Intensamente 2</h3>
+            <img src="intensamente.webp" class="logo" alt="Imagen de Intensamente 2">
+            <p>Ahora que es adolescente, Riley experimenta nuevos sentimientos como Ansiedad y Envidia, que se imponen a
+                los viejos mientras ella duda sobre si abandonar a sus antiguas amigas.</p>
+            <ul>
+                <li>Género: Animación, Comedia, Drama</li>
+                <li>Duración: 95 min</li>
+            </ul>
+            <a href="https://www.cinecolombia.com/pelicula/intensamente-2" target="_blank">Comprar boletos</a>
+        </div>
+
+        <!-- PELICULA 2 -->
+        <div class="pelicula">
+            <h3>Avengers: Endgame</h3>
+            <img src="scale.webp" class="logo" alt="scale">
+            <p>Los Vengadores restantes se unen para revertir las consecuencias causadas por Thanos y restaurar el universo.</p>
+            <ul>
+                <li>Género: Acción, Ciencia Ficción, Aventura</li>
+                <li>Duración: 181 min</li>
+            </ul>
+            <a href="https://www.cinecolombia.com/pelicula/avengers-endgame" target="_blank">Comprar boletos</a>
+        </div>
+
+        <!-- PELICULA 3 -->
+        <div class="pelicula">
+            <h3>El viaje de Chihiro</h3>
+            <img src="elviaje.jpg" class="logo" alt="Imagen de El viaje de Chihiro">
+            <p>Chihiro queda atrapada en un extraño mundo de espíritus y debe encontrar una manera de regresar al mundo real.</p>
+            <ul>
+                <li>Género: Animación, Fantasía, Aventura</li>
+                <li>Duración: 125 min</li>
+            </ul>
+            <a href="https://www.cinecolombia.com/pelicula/el-viaje-de-chihiro" target="_blank">Comprar boletos</a>
+        </div>
+
+        <!-- PELICULA 4 -->
+        <div class="pelicula">
+            <h3>Spider-Man: No Way Home</h3>
+            <img src="spiderman.jpg" class="logo" alt="Imagen de Spider-Man: No Way Home">
+            <p>Spider-Man se enfrenta a los villanos de múltiples universos mientras lucha por mantener su identidad secreta.</p>
+            <ul>
+                <li>Género: Acción, Aventura, Superhéroes</li>
+                <li>Duración: 148 min</li>
+            </ul>
+            <a href="https://www.cinecolombia.com/pelicula/spider-man-no-way-home" target="_blank">Comprar boletos</a>
+        </div>
+
+        <!-- PELICULA 5 -->
+        <div class="pelicula">
+            <h3>Jurassic World: Dominion</h3>
+            <img src="jusaric.webp" class="logo" alt="Imagen de Jurassic World: Dominion">
+            <p>Los dinosaurios ahora viven entre los humanos, y el equilibrio de la naturaleza está en juego.</p>
+            <ul>
+                <li>Género: Acción, Ciencia Ficción, Aventura</li>
+                <li>Duración: 146 min</li>
+            </ul>
+            <a href="https://www.cinecolombia.com/pelicula/jurassic-world-dominion" target="_blank">Comprar boletos</a>
+        </div>
+
+        <!-- PELICULA 6 -->
+        <div class="pelicula">
+            <h3>Doctor Strange en el multiverso de la locura</h3>
+            <img src="doctorstrange.webp" class="logo" alt="Imagen de Doctor Strange en el multiverso de la locura">
+            <p>Doctor Strange explora el multiverso para enfrentarse a amenazas inimaginables.</p>
+            <ul>
+                <li>Género: Fantasía, Ciencia Ficción, Aventura</li>
+                <li>Duración: 126 min</li>
+            </ul>
+            <a href="https://www.cinecolombia.com/pelicula/doctor-strange-multiverso" target="_blank">Comprar boletos</a>
+        </div>
+
+        <!-- PELICULA 7 -->
+        <div class="pelicula">
+            <h3>Lightyear</h3>
+            <img src="disneylligth.jpeg" class="logo" alt="Imagen de Lightyear">
+            <p>La historia detrás del legendario guardián espacial Buzz Lightyear y su aventura hacia el infinito y más allá.</p>
+            <ul>
+                <li>Género: Animación, Aventura, Ciencia Ficción</li>
+                <li>Duración: 105 min</li>
+            </ul>
+            <a href="https://www.cinecolombia.com/pelicula/lightyear" target="_blank">Comprar boletos</a>
+        </div>
+
+        <!-- PELICULA 8 -->
+        <div class="pelicula">
+            <h3>Matrix Resurrecciones</h3>
+            <img src="matrix.jpg" class="logo" alt="Imagen de Matrix Resurrecciones">
+            <p>Neo regresa al mundo de la Matrix para desentrañar una nueva y peligrosa realidad.</p>
+            <ul>
+                <li>Género: Acción, Ciencia Ficción</li>
+                <li>Duración: 148 min</li>
+            </ul>
+            <a href="https://www.cinecolombia.com/pelicula/matrix-resurrecciones" target="_blank">Comprar boletos</a>
+        </div>
+
+    </section>
+
+    <!-- SECCION DE RESEÑAS -->
+    <section id="reseñas">
+        <h2>Deja tu Reseña</h2>
+        <form action="#" method="POST" onsubmit="return false;">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <br>
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" required></textarea>
+            <br>
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+
+    <!-- BOTONES INTERACTIVOS -->
+    <section id="interaccion">
+        <button id="cambiarColorTitulo">Cambiar color del título</button>
+        <br><br>
+    </section>
+
+</body>
+</body>
+<script src="./scripts.js" defer></script>
+</html>
+
+
+</html>

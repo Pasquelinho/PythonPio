@@ -1,0 +1,21 @@
+clave = "UNIAJC" # variable tipo texto
+while clave == "UNIAJC" : # white codigo repetitivo
+  nombre = input ("Operario ingrese su nombre: ")
+  cedula = int (input ("Operario ingrese la cedula sin puntos: "))
+  fecha = input ("Operario ingrese la fecha revision d/m/a: ")
+  edad = input ("Operario ingrese la edad: ")
+  eps = input ("operario ingrese la eps: ")
+  marca = input ("Operario ingrese la marca del automovil: ")
+  mayor = float (input ("Ingrese el lado mayor de la pieza: "))
+  menor = float (input ("Ingrese el lado menor de la pieza:  "))
+ 
+  area = (3.14)*(mayor * mayor)-(menor*menor)
+  print ("El nombre del operario es: " , nombre)
+  print ("la cedula del operario es: " , cedula)
+  print (" La fecha de revision d/m/a es: " , fecha)
+  print ("La edad del operario es: " , edad)
+  print ("La eps del operario es: " , eps)
+  print ("La marca del automovil es: " , marca)
+  print ("El lado mayor de la pieza es: " , mayor)
+  print ("El lado menor de la pieza es: " , menor)
+  clave = input ("Usuario si desea continuar escriba FIAT, en caso contrario presione otra tecla !!!")
